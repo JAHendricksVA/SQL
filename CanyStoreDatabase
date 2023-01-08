@@ -1,0 +1,23 @@
+
+
+CREATE TABLE Juice_Pop (Name TEXT PRIMARY KEY, Color TEXT, Price INTEGER, Quantity INTEGER, Aisle INTEGER);
+
+INSERT INTO Juice_Pop VALUES ("Candy_Corn", "Orange", 4, 22, 89);
+INSERT INTO Juice_Pop VALUES ("Red_Hot", "Red", 8, 3, 33);
+INSERT INTO Juice_Pop VALUES ("Magic_Lips", "Assorted", 44, 2, 33);
+INSERT INTO Juice_Pop VALUES ("Smartpop", "White", 3, 4, 55);
+INSERT INTO Juice_Pop VALUES ("Zagnut", "Brown", 2, 45, 55);
+INSERT INTO Juice_Pop VALUES ("Candy_Cigs", "White", 34, 44, 65);
+INSERT INTO Juice_Pop VALUES ("Laffy", "Assorted", 44, 65, 65);
+INSERT INTO Juice_Pop VALUES ("Jawbreaker", "Assorted", 45, 3, 65);
+INSERT INTO Juice_Pop VALUES ("Fun_Dip", "Assorted", 2, 33, 64);
+INSERT INTO Juice_Pop VALUES ("Jujubes", "Assorted", 1, 1, 1);
+INSERT INTO Juice_Pop VALUES ("Pop_Rocks", "Blue", 1, 22, 1);
+INSERT INTO Juice_Pop VALUES ("Necklaces", "Assorted", 2, 44, 55);
+INSERT INTO Juice_Pop VALUES ("Razzles", "Assorted", 2, 22, 44);
+INSERT INTO Juice_Pop VALUES ("Mallo", "Brown", 2, 22, 34);
+INSERT INTO Juice_Pop VALUES ("Cow_Tail", "Brown", 1, 54, 2);
+
+SELECT * FROM Juice_Pop;
+SELECT * FROM Juice_Pop WHERE Quantity < 22 ORDER BY Aisle;
+
