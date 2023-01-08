@@ -1,4 +1,4 @@
-
+Welcome to my Candy Store. I have created a Candy Store that shows you the name of the candy, color, price, quanitiy, and aisle. Then I have a query of where you can find the candy in an aisle greater than 22. 
 
 CREATE TABLE Juice_Pop (Name TEXT PRIMARY KEY, Color TEXT, Price INTEGER, Quantity INTEGER, Aisle INTEGER);
 
