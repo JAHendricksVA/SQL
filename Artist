@@ -1,0 +1,27 @@
+/* Create table about the people and what they do here */
+CREATE TABLE Album (id INTEGER PRIMARY KEY, Artist TEXT, Album_Name TEXT, Release_Year INTEGER);
+
+INSERT INTO Album VALUES (1, "Chris Young", "Loosing Sleep", 2017);
+INSERT INTO Album VALUES (2, "Reba", "Love Somebody", 2015);
+INSERT INTO Album VALUES (3, "Elle King", "Shake the Spirit", 2018);
+INSERT INTO Album VALUES (4, "Missy Elliot", "Da Real World", 1999);
+INSERT INTO Album VALUES (5, "Ed Sheeran", "x", 2014);
+INSERT INTO Album VALUES (6, "Britney Spears", "...Baby One More Time", 1999);
+INSERT INTO Album VALUES (7, "Kelly Clarkson", "Meaning of Life", 2017);
+INSERT INTO Album VALUES (8, "Lady Gaga", "Born This Way", 2013);
+
+CREATE TABLE Artist (id INTEGER Primary KEY, Fullname TEXT, Genre TEXT);
+
+INSERT INTO Artist VALUES (1, "Chris Young", "Country");
+INSERT INTO Artist VALUES (2, "Reba McEntire", "Country");
+INSERT INTO Artist VALUES (3, "Elle King", "Alternative");
+INSERT INTO Artist VALUES (4, "Missy Elliot", "Rap");
+INSERT INTO ARTIST VALUES (5, "Ed Sheeran", "Pop");
+INSERT INTO Artist VALUES (6, "Britney Spears", "Pop");
+INSERT INTO Artist VALUES (7, "Kelly Clarkson", "Pop");
+INSERT INTO Artist VALUES (8, "Lady Gaga", "Pop");
+
+SELECT Album.Artist, Artist.Genre
+FROM Album
+LEFT OUTER JOIN Artist
+ON Album.Artist = Artist.Fullname;
