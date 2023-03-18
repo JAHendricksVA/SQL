@@ -48,39 +48,4 @@ GROUP BY Product
 ORDER BY sum(quantity*price) desc
 LIMIT 1
 
-#6 used CTE to show the average popularity of an artist
-WITH popularity_average_CTE AS (
-SELECT s.artist_name,
-AVG(s.popularity) AS average_popularity
-FROM Spotifydata s
-GROUP BY s.artist_name
-)
 
-SELECT artist_name,
-       average_popularity,
-       'Top Star' AS tag
-FROM popularity_average_CTE
-WHERE average_popularity>=90
-
-#7 Thesea are bikes that are road worthy
-WITH safety_average_cte AS (
-SELECT street, AVG(safetyrating) as 'rating'
-FROM CityBikeLanes
-GROUP BY street
-)
-
-SELECT
-street,
-rating,
-'safe lane' as 'label'
-FROM safety_average_cte
-where rating>=4
-
-#8 Using the window function to show average safety rating and recommending if the lanes need improvements
-SELECT street, safetyrating,
-AVG(safetyrating) OVER (PARTITION BY street) as "Average_safety_rating",
-CASE WHEN AVG(safetyrating) OVER (PARTITION BY safetyrating)>=4 THEN "Leave As-Is"
-  WHEN AVG(safetyrating) OVER (PARTITION BY safetyrating) <2.5 THEN "Remove"
-  ELSE "Improvements Needed"
-  END AS "Recommendation"
-FROM CityBikeLanes
